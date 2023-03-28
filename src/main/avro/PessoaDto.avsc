@@ -1,0 +1,9 @@
+{
+  "type": "record",
+  "name": "PessoaDTO",
+  "namespace": "io.github.yesminmarie.kafkaschemaregistryexample.entity",
+  "fields": [
+    {"name": "nome", "type": "string"},
+    {"name": "sobrenome",  "type": "string"}
+  ]
+}

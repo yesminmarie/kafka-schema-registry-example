@@ -1,0 +1,25 @@
+#kafka local producer properties
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: localhost:29092
+      client-id: pessoa-producer
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+    consumer:
+      bootstrap-servers: localhost:29092
+      group-id: pessoa-consumer
+      auto-offset-reset: latest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+    properties:
+      schema:
+        registry:
+          url: "http://0.0.0.0:8085"
+      specific:
+        avro:
+          reader: true
+auto:
+  create:
+    topics:
+      enable: true
